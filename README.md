@@ -23,6 +23,11 @@ Please cite our paper if you find this repository useful for your research
   organization={Springer}
 }
 ``` 
+## Environment Requirement
+The executable was compiled on WSL1 with gcc/g++ 8.1.0. It has not been tested on other platforms and compilers. To get the manual of the executable, you can type:
+```
+./runSupremo -h
+```
 
 ## 4DCT sorting artefacts explained
 ![artifact](./assets/4DCT_sorting_artefacts.png)
