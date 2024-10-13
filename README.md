@@ -1,14 +1,11 @@
-# 4DCT-irregular-motion: Resolving Variable Respiratory Motion From Unsorted 4D Computed Tomography [[arxiv](https://arxiv.org/abs/2407.00665)]
-[![CC BY-NC-ND 4.0][cc-by-nc-nd-shield]][cc-by-nc-nd]
-
-### Accepted by 27<sup>th</sup> International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI 2024)
+# MICCAI2024: Resolving Variable Respiratory Motion From Unsorted 4D Computed Tomography [[paper link](https://link.springer.com/chapter/10.1007/978-3-031-72378-0_55)]
 
 [Yuliang Huang](https://scholar.google.com/citations?user=1fe-_aoAAAAJ&hl=en), 
 [Bjoern Eiben](https://scholar.google.com/citations?user=RIDywa4AAAAJ&hl=en),
 [Kris Thielemans](https://scholar.google.co.uk/citations?user=Y1AdYQEAAAAJ&hl=en), 
 [Jamie McClelland](https://scholar.google.co.uk/citations?user=IrDaFHEAAAAJ&hl=en)
 
-<b>[The executable will be available after official publication of MICCAI proceedings. Currently we just upload the data and relevant processing scripts]</b>
+[![CC BY-NC-ND 4.0][cc-by-nc-nd-shield]][cc-by-nc-nd]
 
 This repository provides pre-compiled executable along with the XCAT phantom dataset* used in our MICCAI paper. We propose surrogate-free/optimized method as an improvement over the surrogate-driven motion model approach ([Jamie McClelland et al.](https://doi.org/10.1088/1361-6560/aa6070)), as we found the quality of surrogate signals can impact accuracy of motion estimation ([Yuliang Huang et al.](https://doi.org/10.1088/1361-6560/ad1546)). The implementation was adapted from our original software [SuPReMo](https://github.com/UCL/SuPReMo). Keep en eye on this repo as we may incorpoarte the latest developments back to SuPReMo in the future.
 
@@ -17,14 +14,13 @@ This repository provides pre-compiled executable along with the XCAT phantom dat
 ## Citation
 Please cite our paper if you find this repository useful for your research
 ```bib
-@misc{huang2024resolvingvariablerespiratorymotion,
-      title={Resolving Variable Respiratory Motion From Unsorted 4D Computed Tomography}, 
-      author={Yuliang Huang and Bjoern Eiben and Kris Thielemans and Jamie R. McClelland},
-      year={2024},
-      eprint={2407.00665},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2407.00665}, 
+@inproceedings{huang2024resolving,
+  title={Resolving Variable Respiratory Motion From Unsorted 4D Computed Tomography},
+  author={Huang, Yuliang and Eiben, Bjoern and Thielemans, Kris and McClelland, Jamie R},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={588--597},
+  year={2024},
+  organization={Springer}
 }
 ``` 
 
@@ -78,7 +74,7 @@ python evaluation.py --dir_gtVolume data/ground_truth/volumes/ --dir_gtMask data
 ```
 
 ## Surrogate-free Motion Model
-In clinical practice, the respiration curves are raarely saved. In such case, surrogate-driven method is not applicable due to the lack of surrogate signals. In contrast, surrogate-free method does not require existing respiration signals but optimize the surrogate signals from simple sinusoidal curves.
+In clinical practice, the respiration curves are rarely saved. In such case, surrogate-driven method is not applicable due to the lack of surrogate signals. In contrast, surrogate-free method does not require existing respiration signals but optimize the surrogate signals from simple sinusoidal curves.
 
 Run the following script to fit the sorrugate-free motion model and estimate the volumes and tumor masks at each timepoint:
 ```bash
